@@ -21,11 +21,13 @@
 - [] Reducers needed in index.js
     - [] details reducer
     - [] addMovie reducer
+    - [] movieItem reducer
 
 
 - [] create component with wire frame for each page
     - [] details component
     - [] addMovie component
+    - [] movieItem component
         - [] axios POST
 
 - [] add a POST router to modules
