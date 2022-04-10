@@ -1,11 +1,24 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
-function MovieDetails(props) {
+function MovieDetails() {
 
+    const genres = useSelector(store => store.genres);
+    console.log('inside of movieDetails', genres);
 
+    // return ( <p>yo</p>)
 
     return (
-        <p>These are the details</p>
+        <div>
+            {genres.map((genre, i) => {
+                return (
+                    <div>
+                        <p>{genre.name}</p>
+                        <p>{genre.title}</p>
+                    </div>
+                )
+            })}
+        </div>
     )
 };
 

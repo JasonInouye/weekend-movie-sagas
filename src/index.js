@@ -23,24 +23,21 @@ function* fetchAllMovies() {
         const movies = yield axios.get('/api/movie');
         console.log('get all:', movies.data);
         yield put({ type: 'SET_MOVIES', payload: movies.data });
-
     } catch {
         console.log('get all error');
     }
-        
 }
 
-function* fetchGenres() {
+function* fetchGenres(action) {
     // get all genres from the DB for single ID
+    const id = action.payload;
     try {
-        const genres = yield axios.get('/api/genre');
-        console.log('get all:', genres.data);
-        yield put({ type: 'SET_GENRES', payload: genres.data });
-
+        console.log('get all:', action.payload);
+        const genres = yield axios.get(`/api/genre/${id}`);
+        yield put({ type: 'SET_GENRES', payload: genres });
     } catch {
         console.log('get all error');
     }
-        
 }
 
 // Create sagaMiddleware
@@ -58,9 +55,10 @@ const movies = (state = [], action) => {
 
 // Used to store the movie genres
 const genres = (state = [], action) => {
+    // console.log( `inside of genres store, ${action.payload.data}`);
     switch (action.type) {
         case 'SET_GENRES':
-            return action.payload;
+            return action.payload.data;
         default:
             return state;
     }
