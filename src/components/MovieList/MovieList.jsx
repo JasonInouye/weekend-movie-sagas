@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import './MovieList.css'
 import MovieItem from '../MovieItem/MovieItem';
 
+import {makeStyles, Grid} from '@material-ui/core';
+
 function MovieList() {
 
     const dispatch = useDispatch();
@@ -12,19 +14,34 @@ function MovieList() {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 
+    const useStyles = makeStyles({
+        root: {
+            maxWidth: 400,
+            padding: 40
+        }
+    });
+
+    const classes = useStyles();
+
+
     return (
         <main>
             <h1>MovieList</h1>
-            <section className="movies">
-                {movies.map(movie => {
-                    return (
-                        <MovieItem
-                            key={movie.id}
-                            movieItem={movie}
-                        />
-                    );
-                })}
-            </section>
+            <Grid container>
+                <Grid item xs={12}>
+                    <section className="movies">
+                        {movies.map(movie => {
+                            return (
+                                <MovieItem
+                                    key={movie.id}
+                                    movieItem={movie}
+                                />
+                            );
+                        })}
+                    </section>Î
+                </Grid>
+            </Grid>
+
         </main>
 
     );
