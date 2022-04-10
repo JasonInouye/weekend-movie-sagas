@@ -42,7 +42,7 @@ function* fetchGenres(action) {
 }
 
 function* fetchSelectedMovie(action) {
-    // get all genres from the DB for single ID
+    // get selected movie from the DB for single ID
     const id = action.payload;
     try {
         console.log('get selected movie:', action.payload);
