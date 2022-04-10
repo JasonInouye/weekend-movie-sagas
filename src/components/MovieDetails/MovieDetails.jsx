@@ -12,9 +12,8 @@ function MovieDetails() {
         <div>
             {genres.map((genre, i) => {
                 return (
-                    <div>
+                    <div key={i}>
                         <p>{genre.name}</p>
-                        <p>{genre.title}</p>
                     </div>
                 )
             })}
