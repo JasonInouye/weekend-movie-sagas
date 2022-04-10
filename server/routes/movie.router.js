@@ -17,8 +17,8 @@ router.get('/', (req, res) => {
 
 });
 
+// This router is for the selected movie on MovieItem component
 router.get('/:id', (req, res) => {
-
   const query = `SELECT * FROM movies 
                 WHERE "id" = $1
                 ORDER BY "title" ASC;`;

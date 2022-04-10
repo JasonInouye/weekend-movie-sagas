@@ -11,6 +11,7 @@ function MovieItem({ movieItem }) {
     const handleDetails = () => {
         console.log( 'Clicked Details', movieItem.id );
         dispatch({ type: 'FETCH_GENRES', payload: movieItem.id })
+        dispatch({ type: 'FETCH_SELECTED_MOVIE', payload: movieItem.id })
         history.push('/details')
     }
 
