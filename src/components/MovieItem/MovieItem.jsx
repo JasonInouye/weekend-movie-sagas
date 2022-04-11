@@ -37,11 +37,7 @@ function MovieItem({ movieItem }) {
 
     return (
         <div key={movieItem.id} >
-            {/* <div>
-                        <img src={movieItem.poster} alt={movieItem.title} onClick={() => handleDetails(movieItem.id)} />
-                        <p>{movieItem.title}</p>
-                    </div> */}
-            <Card>
+            <Card elevation={5}>
                 <CardMedia
                     component="img"
                     image={movieItem.poster}
