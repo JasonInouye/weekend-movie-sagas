@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './MovieList.css'
 import MovieItem from '../MovieItem/MovieItem';
 
-import {makeStyles, Grid} from '@material-ui/core';
+import {makeStyles, Grid, Container} from '@material-ui/core';
 
 function MovieList() {
 
@@ -23,9 +23,8 @@ function MovieList() {
 
     const classes = useStyles();
 
-
     return (
-        <main>
+        <Container>
             <h1>MovieList</h1>
             <Grid container>
                 <Grid item xs={12}>
@@ -41,8 +40,7 @@ function MovieList() {
                     </section>Î
                 </Grid>
             </Grid>
-
-        </main>
+        </Container>
 
     );
 }

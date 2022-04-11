@@ -44,13 +44,13 @@ function MovieItem({ movieItem }) {
             <Card sx={{ maxWidth: 345 }}>
                 <CardMedia
                     component="img"
-                    minheight="175"
-                    minwidth="85"
+                    height="275"
+                    width="185"
                     image={movieItem.poster}
                     alt={movieItem.title}
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="div" style={{ wordWrap: "break-word"}}>
+                    <Typography display="block" variant="h6" align="center" component="h2" gutterBottom>
                         {movieItem.title}
                     </Typography>
                 </CardContent>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+import Container from '@material-ui/core/Container';
 
 function MovieDetails() {
 
@@ -14,7 +16,7 @@ function MovieDetails() {
     }
 
     return (
-        <div>
+        <Container>
             {details.map((details, i) => {
                 return (
                     <div key={i}>
@@ -32,8 +34,8 @@ function MovieDetails() {
                     </div>
                 )
             })}
-            <button onClick={handleHome}>Return Home</button>
-        </div>
+            <Button onClick={handleHome} variant="contained">Return Home</Button>
+        </Container>
     )
 };
 
