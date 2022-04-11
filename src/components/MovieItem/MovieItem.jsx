@@ -41,11 +41,9 @@ function MovieItem({ movieItem }) {
                         <img src={movieItem.poster} alt={movieItem.title} onClick={() => handleDetails(movieItem.id)} />
                         <p>{movieItem.title}</p>
                     </div> */}
-            <Card sx={{ maxWidth: 345 }}>
+            <Card>
                 <CardMedia
                     component="img"
-                    height="275"
-                    width="185"
                     image={movieItem.poster}
                     alt={movieItem.title}
                 />

@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
+import HomeIcon from '@material-ui/icons/Home';
 
 function MovieDetails() {
 
@@ -34,7 +35,7 @@ function MovieDetails() {
                     </div>
                 )
             })}
-            <Button onClick={handleHome} variant="contained">Return Home</Button>
+            <Button onClick={handleHome} variant="contained" endIcon={<HomeIcon />}>Return Home</Button>
         </Container>
     )
 };
